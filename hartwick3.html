@@ -1,0 +1,46 @@
+<html>
+<head>
+
+<script src="hartwick1.js" type="text/javascript">
+</script>
+
+<script type="text/javascript"> 
+
+function myFunction(p1, p2) {
+    return p1 * p2;              
+// The function returns the product of p1 and p2
+
+}
+
+myFunction(9,9); //this won't affect the interface
+
+var a=4;
+var b=2;
+var c=myFunction(a,b); //this won't affect the interface
+
+//this won't work
+//Your script relies on the DOM being ready, 
+//so you need to execute that function call only after the DOM is ready.
+document.getElementById("result").innerHTML = myFunction(10, 200);
+
+document.getElementById("p1").innerHTML = "New text!";
+
+window.onload = function() {
+	document.getElementById("result").innerHTML=c;
+};
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="result"> this is where    </div>
+
+<div id="p1">Hello World!</div>
+
+
+
+</body>
+</html>
