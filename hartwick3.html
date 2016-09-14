@@ -21,12 +21,12 @@ var c=myFunction(a,b); //this won't affect the interface
 //this won't work
 //Your script relies on the DOM being ready, 
 //so you need to execute that function call only after the DOM is ready.
-document.getElementById("result").innerHTML = myFunction(10, 200);
+document.getElementById("result2").innerHTML = myFunction(10, 200);
 
 document.getElementById("p1").innerHTML = "New text!";
 
 window.onload = function() {
-	document.getElementById("result").innerHTML=c;
+	document.getElementById("result1").innerHTML=c;
 };
 
 
@@ -36,7 +36,8 @@ window.onload = function() {
 
 <body>
 
-<div id="result"> this is where    </div>
+<div id="result1"> this is where    </div>
+<div id="result2"> this is where    </div>
 
 <div id="p1">Hello World!</div>
 
