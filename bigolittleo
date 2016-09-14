@@ -1,0 +1,122 @@
+Approaches:
+
+
+
+Recall O(f(n)) is the set of all functions with a smaller or the same order of growth as f(n). No worse than f(n).
+
+f \belong O(g) or f ∈ O(g) says, essentially
+
+For at least one choice of a constant k > 0, you can find a constant a such that the inequality f(x) < k g(x) holds for all x > a.
+Note that O(g) is the set of all functions for which this condition holds.
+
+O(n^2) = {100n^2+1000, n^2, 100n+5, logn, ...}
+
+
+
+now little o notation
+
+o(f(n) is the set of all functions with a smaller rate of growth than f(n).
+
+f \belong o(g) to f ∈ o(g) says, essentially
+
+For every choice of a constant k > 0, you can find a constant a such that the inequality f(x) < k g(x) holds for all x > a.
+Once again, note that o(g) is a set.
+o(n^2) = {100n+5, logn, ...}
+
+2n=o(n2)  2n^2 is not o(n^2)
+
+https://www.youtube.com/watch?v=-f86fVVPud8
+
+
+What is an algorithm?
+- A sequence of unambiguous instructions for solving a computational problem.
+- A prolem solving method.
+can be implemented on a computer as a program
+
+problems that are not computational
+1. What's the cure for cancer?
+2. How do I convince my boss to give me a salary raise?
+
+Problems are sorting problems
+Given 
+Input A sequence of n numbers: a1, a2, a3, ... an
+Output: A reordering of these n numbers in ascending order (or descending)
+a1', a2' ... an'
+such that a1' <=a2' <= ... <=an'
+
+Ex: given a list of numbers: <31, 41, 59, 26, 41, 58>
+these are the input numbers
+We need design an algorithm to process the above input so that
+the output would be
+<26, 31, 41, 41, 58, 59> in ascending order or descending order
+
+
+Before we design an algorithm to solve the problem, we need to 
+decide a data structure to hold the input numbers and output numbers
+For now let us use simple linear data structure: 1 D array. 
+
+Input array I :   _ _ _ _ _ _
+output array O:  _ _ _ _ _ _
+
+Selection Sort Algorithm: 
+repeat n times 
+select the smallest num from I 
+put it into the next empty slot in O, and delete it from A.
+what delete means?
+ 
+Problem
+
+Data Structures to hold input and output
+
+Algorithms
+
+Implementation (program) process input to get the ouput
+
+
+In place sorting, 
+stable sorting
+
+Inversions
+Inversion Count for an array indicates – how far (or close) the array is from being sorted. If array is already sorted then inversion count is 0. If array is sorted in reverse order that inversion count is the maximum. 
+Formally speaking, two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j
+
+Example:
+The sequence 2, 4, 1, 3, 5 has three inversions (2, 1), (4, 1), (4, 3).
+
+Let A[1..n] be an array of (distinct usually, but duplicated is ok) numbers, 
+and let us assume ascending order for sorting. 
+
+if i<j but A[i] > A[j], then the pair (A[i],A[j])
+is called an inversion of A
+
+Example:
+
+    7     3
+_ _ _ _ _ _ _
+    i     j
+
+A[1..n]    
+(7,3) is an inversion, (3,7) is not.
+
+
+
+a) List the 5 inversions of  <2,3,8,6,1>
+8,6
+2,1
+3,1
+8,1
+6,1
+
+
+
+b) What array with elements from the set {1,2, ... n}
+has the most inversions? How many does it have.
+
+In the reversed order of the sorting order.
+
+
+
+
+https://www.youtube.com/watch?v=87uzB76-C0c&list=PL01A89F4E9E5F3AD
+
+

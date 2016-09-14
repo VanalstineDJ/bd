@@ -1,0 +1,21 @@
+
+<head>
+
+<script src=unobtrusiveclass.js>
+</script>
+
+</head>
+
+<button class="foo">1...</button>
+<button class="foo">2...</button>
+<button class="foo">3...</button>
+<button class="foo">4...</button>
+
+<p id="show">here </p>
+/*
+Anywhere on the page that a <button class="foo">...</button> element appears, clicking it, or any HTML tag inside of it, will run the doSomething function.
+
+Since Event Delegation is used, only a single click handler is registered on the document object. If more <button>s are created as a result of an AJAX call, you don't have to register click handlers on those new <button>s since we take advantage of the click event bubbling up from the element the user clicked on to the document object itself.
+
+
+*/

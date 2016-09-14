@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+document.getElementById("demo").addEventListener("click", displayDate);
+
+document.getElementById("demo1").addEventListener("click", displayDate1("demo1"));
+document.getElementById("demo2").addEventListener("click", displayDate1("demo2"));
+
+for(i=1; i<11; i++) 
+    handleElement(i);
+
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+
+
+function displayDate1(eid) {
+    document.getElementById(eid).innerHTML = Date();
+
+function handleElement(i) {
+    document.getElementById("b"+i).onclick=function() {
+        alert(i);
+    };
+}
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<button 
+>The time is?</button>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<br>
+
+<pre>
+Advantages:
+0. More modular.  behaviour (Javascript) is separated from presentation of content and styles (HTML/CSS)
+no mixing of languages
+1. HTML part Clean. CSS can also be clean and separated.
+2. logic in a central javascript 
+
+
+you can use a javascript framework like jQuery that can handle most cross-browser issues for you
+You can add behaviour to a lot of HTML elements at once without code duplication
+</pre>
+
+For example, you have 10 anchor tags generated from an AJAX (will learn what it is in a future lecture) response:
+<a href="#" id="b1">b1</a>
+<a href="#" id="b2">b2</a>
+<a href="#" id="b3">b3</a>
+<a href="#" id="b4">b4</a>
+<a href="#" id="b5">b5</a>
+<a href="#" id="b6">b6</a>
+<a href="#" id="b7">b7</a>
+<a href="#" id="b8">b8</a>
+<a href="#" id="b9">b9</a>
+<a href="#" id="b10">b10</a>
+
+
+!!!!Disadvantages?!!!!
+The main disadvantage is discoverability? looking at the HTML does not tell you which callbacks are attached to it, not even whther there are any.
+But this is only for people who are not web developer. 
+
+So NO disadvantages.
+
+</body>
+</html>
+
+
