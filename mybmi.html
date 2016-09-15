@@ -1,0 +1,100 @@
+<html>
+
+<head>
+
+    <title>BMI Calculator</title>
+
+    <script type="text/javascript">
+	// only functions should be put here. 
+	// if you have global statements, they should be put in 
+	// a script tag at the end of the body.
+	// If you mix functions and global statements in one external js file
+	// it should be referenced using a script tag put in the end of the body
+
+        function computeBMI()
+        {
+            //Obtain user inputs
+
+            var height=document.getElementById("height").value;
+            var weight=document.getElementById("weight").value;
+
+
+            //Convert all units to metric
+            height/=39.3700787;
+            weight/=2.20462;
+
+            //Perform calculation
+            var BMI=weight/Math.pow(height,2);
+
+            //Display result of calculation
+            document.getElementById("output").innerHTML=Math.round(BMI*100)/100;
+
+            if (BMI<18.5)
+            annotation = "Underweight";
+            if (BMI>=18.5 && BMI<=25)
+            annotation = "Normal";
+            if (BMI>=25 && BMI<=30)
+            annotation = "Obese";
+            if (BMI>30)
+            annotation = "Overweight";
+
+	    // Display annotation
+            document.getElementById("comment").innerHTML = annotation;
+
+            document.getElementById("test").innerHTML = "You are" + height +"meters";
+
+        }
+
+    </script>
+
+</head>
+
+<style>
+
+body{
+
+background-color: red;
+
+}
+
+</style>
+
+<body>
+
+<a href="http://www.whathealth.com/bmi/formula.html"> Click here for formula 
+</a>
+
+    <div>Body Mass Index Calculator</div>
+    
+    <div>Enter your height in inches: <input type="text" id="height"/>
+    </div>
+
+    <div>Enter your weight in pounds: <input type="text" id="weight"/>
+    </div>
+
+    <div>
+	<button onclick="computeBMI();"> ComputeBMI obtrusive</button> <!-- this is obtrusive -->
+
+	<button id="b1";"> ComputeBMI unobtrusive </button>  <!-- this is unobtrusive, see below javascript-->
+    </div>
+
+    <div> Your BMI is: <span id="output">?</span> </div>
+
+    <div> Your are: <span id="comment">?</span> </div>
+    <div> Testing  <span id="test">?</span> </div>
+    
+	<script type="text/javascript">
+	// only functions should be put here. 
+	// if you have global statements, they should be put in 
+	// a script tag at the end of the body.
+	// If you mix functions and global statements in one external js file
+	// it should be referenced using a script tag put in the end of the body
+
+	var b = document.getElementById('b1');
+	b.onclick = function() {
+    		alert('Hello Hartwick');
+		computeBMI();
+	}
+	</script>
+</body>
+</html>
