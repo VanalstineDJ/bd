@@ -11,11 +11,12 @@ b.onclick= givemeamaze; // notice that there is no ()
 
 function isvalidinput()
 {
+	//validate input before proceed
 	var w=document.getElementById("colnum");
         var h=document.getElementById("rownum");
         var p=document.getElementById("percentage");	
 
-	if (w.checkValidity() == false ||h.checkValidity()==false||p.checkValidity()==false)
+	if (w.checkValidity() == false ||h.checkValidity() == false||p.checkValidity() == false)
 	{
 		document.getElementById("message").innerHTML="Input is invalid!";
 		return false;
@@ -25,7 +26,8 @@ function isvalidinput()
 
 function givemeamaze(){
 
-	if (!isvalidinput()) return;
+	//if (!isvalidinput()) return;  
+	// there is a minor issue with validate function, commented it out now
 
 	alert('hello Hartwick cisc380'+document.getElementById("colnum").value);
 	setupinput(document.getElementById("colnum").value,

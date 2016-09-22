@@ -46,3 +46,10 @@ _.times(squaresColumn, function(n) {
       d3.select(this).attr('fill', '#7AC143');
     });
 });
+function handleClick(event){
+            console.log(document.getElementById("numofcol").value)
+            console.log(document.getElementById("numofrow").value)
+            draw(document.getElementById("numofcol").value)
+            return false;
+        }
+
