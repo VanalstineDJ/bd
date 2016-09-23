@@ -1,5 +1,14 @@
 <style>
 
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:valid {
+  border: 1px solid green;
+}
+
 	input:hover
 {
         background: -moz-linear-gradient(top, #249ee4, #057cc0);
