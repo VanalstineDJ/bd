@@ -85,26 +85,13 @@ function displaytheboard()
        		     	var cell = row.insertCell(-1);
            		cell.innerHTML = maze[i][j];
 
-/*	var createClickHandler = 
-    		function(cell) 
-    		{
-       		return function() { 
-                          var c = cell.getElementsByTagName("td")[0];
-                          var id = c.innerHTML;
-                          alert("id:" + id);
-                          };
-            	};
-
-        cell.onclick = createClickHandler(currentRow); 
-*/
 	}
     }
  
     var dvTable = document.getElementById("mymaze");
-    //dvTable.innerHTML = "I am amazed!!!";
     dvTable.appendChild(table);
 
-    table.addEventListener("click",addColumnHandler)
+    table.onclick = columnHandler;
 
 }
 
@@ -127,6 +114,7 @@ var table;
 function columnHandler(e) {
     e = e || window.event; //for IE87
     var t = e.target || e.srcElement; //IE87
+
     while (t.nodeName != 'TD' && t.nodeName != 'TH' && t.nodeName != 'TABLE') {
         t = t.parentNode;
     }
@@ -134,22 +122,39 @@ function columnHandler(e) {
         return;
     }
     var c = t.parentNode.cells;
-    var j = 0;
+	var tr=t.parentNode;
+	var r=tr.parentNode.rows;
+
+    var colindex = 0;
     for (var i=0; i<c.length; i++){
         if (c[i] == t) {
-            j = i;
+            colindex = i;
         }
     }
-    alert('You clicked on row #'+(j+1)+ ' , cell content = '+t.innerHTML);
+
+    var rowindex = 0;
+    for (var i=0; i<r.length; i++){
+        if (r[i] == tr) {
+            rowindex = i;
+        }
+    }
+
+    alert('You clicked on row #'+rowindex+ 'col #'+ colindex + ' , cell content = '+t.innerHTML);
 }
 
-function addColumnHandler() {
-    table = document.getElementById("tableId");
+
+
+
+// The following code should be ignored, because it seems that DOM doesnot
+//support cell level event?? anyway, the above code should be modified ... 
+//I purposely still keep them here, 
+//because it shows typical way how to navigate through the DOM tree. 
+/*
+
+function addColumnHandler(tableid) {
+    table = document.getElementById(tableid);
     table.onclick = columnHandler;
 }
-
-
-
 function addCellHandlers(tableId) {
 
   
@@ -180,7 +185,6 @@ function addCellHandlers(tableId) {
 }
 }
 
-/*
 if (window.addEventListener) {
     window.addEventListener('load', addColumnHandler, false);
 } else if (window.attachEvent) {
